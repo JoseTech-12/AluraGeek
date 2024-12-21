@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AluraGeek</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="fontawesome/fontawesome-free-6.7.2-web/css/all.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courgette&family=Lato:wght@300&family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>AluraGeek</h1>
+    </header>
+
+    <main class="container">
+        <div class="mis-productos">
+            <h2>Mis Productos</h2>
+            <ul data-lista class="contenedor-card">
+
+
+            </ul>
+        </div>
+
+        <form action="" class="formulario">
+            <h2>Agregar Productos</h2>
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre..." required minlength="3" maxlength="20">
+            <input type="number" name="precio" id="precio" placeholder="Precio..." required min="1" step="0.01">
+            <p id="condicion">solo se permiten urls PNG,JPG y JPEG</p>
+            <input type="text" name="imagen" id="imagen" placeholder="Imagen..." required>
+            <div>
+                <button class="btn-enviar button" id="btn-submit" type="submit">Enviar</button>
+                <button class="btn-limbiar button ">limpiar</button>
+            </div>
+        </form>
+
+    </main>
+    <footer>
+
+        <h2>AluraGeek</h2>
+        <p>Desarrollado por Jose Parra</p>
+        <legend>Alura Latam 2024</legend>
+
+    </footer>
+
+
+    <script type="module" src="scripts/mostrarProductos.js"></script>
+    <script type="module" src="scripts/agregarProductos.js"></script>
+    <script type="module" src="scripts/eliminarProducto.js"></script>
+
+</body>
+
+</html>

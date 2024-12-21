@@ -1,0 +1,193 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li,a{
+    text-decoration: none;
+    color: white;
+}
+body{
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: 
+    auto 1fr auto;
+}
+.header{
+   background-color: #5300C8;
+   display: flex;
+   justify-content: center;
+   color: white;
+   padding: 30px;
+
+}
+.header h1{
+    font-size: 1.5rem;
+}
+.container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
+}
+.mis-productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.contenedor-card{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; 
+    padding: 15px;
+    box-shadow: -10px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 12px;
+    min-width: 400px;
+    min-height: 280px;
+    max-width: 900px;
+    max-height: 700px;
+    overflow-y: auto;
+
+}
+
+.card{
+    background-color: #5D04D9;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 196px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   overflow: hidden;
+}
+.imagen-producto{
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    border: 1px solid black;
+}
+.conten-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .7rem;
+}
+.icono-eliminar{
+    color: white;
+    font-size: 1.5rem;
+}
+.icono-eliminar:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+   
+}
+input{
+    font-family: "Press Start 2P", serif;
+    font-style: normal;
+    padding: 10px;
+    border: 2px solid #03318C;
+    border-radius: 25px;
+    width: 392px;
+    height: 50px;
+   font-size: .6rem;
+    
+}
+
+.condicion{
+    font-size: .6rem;
+    color: red;
+    display: flex;
+
+}
+
+
+.button{ 
+    width: 45%;
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid #03318C;
+    height: 45px;
+    font-family: "Press Start 2P", serif;
+    font-style: normal;
+    font-size: .6rem;
+}
+
+.btn-enviar{
+    background-color: #5300C8;
+    color: white;
+    margin-bottom:8px ;
+}
+
+.btn-enviar:hover{
+    background-color: white;
+    color: #5300C8;
+}
+
+.btn-limbiar{
+    background-color: white;
+    color: #5300C8;
+}
+
+.btn-limbiar:hover{
+    background-color: #5300C8;
+    color: white;
+}
+
+footer{
+    background-color: #5300C8;
+    padding: 50px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white; 
+}
+
+
+
+@media (max-width:768px){
+    .container{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .contenedor-card{
+        width: 100%;
+        
+    }
+    .card{
+        width: 100%;
+    }
+    .formulario{
+        width: 100%;
+    }
+    input{
+        width: 100%;
+    }
+    button{
+        width: 100%;
+    }
+    
+}
+@media (max-width:425px){
+    .contenedor-card{
+        justify-content: flex-start;
+        padding: 5px;
+    }
+}
