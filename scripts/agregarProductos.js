@@ -20,6 +20,8 @@ const agregarProductos = async () => {
     try {
         await conneccionApi.agregarProducto(producto);
         alert('Producto agregado');
+        // reinicia la pagina
+        location.reload();
     } catch (error) {
         console.log(error);
     }
