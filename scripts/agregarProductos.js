@@ -1,4 +1,5 @@
 import { conneccionApi } from './conneccion.js';
+import { lista, crearCard, mostrarProductos } from './mostrarProductos.js';
 
 const inputNombre = document.getElementById('nombre');
 const inputPrecio = document.getElementById('precio');
@@ -10,7 +11,6 @@ const btnLimpiar = document.querySelector('.btn-limpiar');
 
 parrafo.style.display = 'none';
 
-// Función para agregar productos
 const agregarProductos = async () => {
     const producto = {
         nombre: inputNombre.value,
@@ -20,23 +20,22 @@ const agregarProductos = async () => {
     try {
         await conneccionApi.agregarProducto(producto);
         alert('Producto agregado');
-        formulario.reset(); // Resetea el formulario después de agregar
-        parrafo.style.display = 'none'; // Esconde el mensaje de error
+        location.reload();
+        formulario.reset();
+        parrafo.style.display = 'none';
     } catch (error) {
-        console.error('Error al agregar producto:', error);
+        console.error(error.message || error);
     }
 };
 
-// Mostrar parrafo de ayuda al hacer clic en el campo de la imagen
 inputImagen.addEventListener('click', () => {
     parrafo.classList.add('condicion');
     parrafo.style.display = 'block';
 });
 
-// Validación y envío del formulario
 btnAgregar.addEventListener('click', (e) => {
-    e.preventDefault(); // Evitar recarga del formulario
-    parrafo.style.display = 'none'; // Esconde el mensaje de error previo
+    e.preventDefault();
+    parrafo.style.display = 'none';
 
     const regex = /(\.jpg|\.jpeg|\.png)$/i;
 
@@ -47,20 +46,15 @@ btnAgregar.addEventListener('click', (e) => {
     }
 
     if (
-        inputNombre.value.trim() === '' ||
-        inputPrecio.value.trim() === '' ||
-        inputImagen.value.trim() === '' ||
-        inputPrecio.value <= 0
+        inputNombre.value === '' || inputPrecio.value === '' || inputImagen.value === '' || inputPrecio.value <= 0
     ) {
         alert('Todos los campos son obligatorios y el precio debe ser mayor a 0');
         return;
     }
 
-    // Si todo es válido, agrega el producto
     agregarProductos();
 });
 
-// Reseteo del formulario
 btnLimpiar.addEventListener('click', () => {
     formulario.reset();
     parrafo.style.display = 'none';

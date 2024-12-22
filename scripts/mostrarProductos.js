@@ -35,3 +35,5 @@ async function mostrarProductos() {
 }
 
 mostrarProductos();
+
+export { lista, crearCard, mostrarProductos };

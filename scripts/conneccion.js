@@ -1,24 +1,26 @@
 const listarProductos = async () => {
-    const response = await fetch('https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos');
+    const response = await fetch('https://67684145cbf3d7cefd377df4.mockapi.io/Productos');
     const data = await response.json();
     return data;
 }
 
 const agregarProducto = async (producto) => {
-    const response = await fetch('https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos', {
+    const response = await fetch('https://67684145cbf3d7cefd377df4.mockapi.io/Productos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(producto)
     });
-    const data = await response.json();
-    return data;
+
+    if (!response.ok) {
+        throw new Error('Error al agregar el producto');
+    }
+    return await response.json();
+
 }
-
-
 const eliminarProducto = async (id) => {
-    const response = await fetch(`https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos/${id}`, {
+    const response = await fetch(`https://67684145cbf3d7cefd377df4.mockapi.io/Productos/${id}`, {
         method: 'DELETE'
     });
 
