@@ -14,6 +14,5 @@ AluraGeek es una aplicación web diseñada para mostrar productos, agregar nuevo
 - **HTML**: Estructura básica de la página.
 - **CSS**: Estilo y diseño visual de la aplicación.
 - **JavaScript**: Lógica de interacción en el frontend.
-- 
 - **MockAPI**: Plataforma para crear APIs falsas y simular un backend.
 
