@@ -1,11 +1,11 @@
 const listarProductos = async () => {
-    const response = await fetch('http://localhost:3001/Productos');
+    const response = await fetch('https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos');
     const data = await response.json();
     return data;
 }
 
 const agregarProducto = async (producto) => {
-    const response = await fetch('http://localhost:3001/Productos', {
+    const response = await fetch('https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -18,7 +18,7 @@ const agregarProducto = async (producto) => {
 
 
 const eliminarProducto = async (id) => {
-    const response = await fetch(`http://localhost:3001/Productos/${id}`, {
+    const response = await fetch(`https://fake-server-git-main-jose-s-projects-5e1abe99.vercel.app/Productos/${id}`, {
         method: 'DELETE'
     });
 
